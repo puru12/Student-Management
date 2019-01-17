@@ -31,14 +31,7 @@ function fun() {
         //console.log(bodyRows);
         document.getElementById("table").innerHTML = bodyRows;
         return data;
-    }).then(function(data){
-        for(var i = 0;i < data.length;i++){
-            fetch("http://localhost:3000/api/colleges/" + data[i].college_id, {method: 'GET'}).then(function(response){return response.json()}).then(function(response){
-                console.log(document.getElementById("table").rows[i]);
-                console.log(response.name);
-            })
-        }
-    })
+    });
 }
 
 function discolleges(){
